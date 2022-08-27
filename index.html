@@ -6,10 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="searchstyle.css">
 </head>
-<body>
-    <header>
-
-    </header>
+<body> 
+    <div class="container">
+        <div class="weatherTab">
+            <form action="#">
+                <input type="search" placeholder="Seach a city...">
+            </form>
+            <div class="message" id="message">not fucking real</div>
+            <div class="currentWeather" id="currentWeather">Rain</div>
+            <div class="location" id="location">Manila, PH</div>
+            <div class="tempIcon">
+                <div class="temp">
+                    <div class="tempC" id="tempC">16°C</div>
+                    <div class="tempF" id="tempF">16°F</div>
+                </div> 
+                <img src="src/gh.png" alt=""class="weatherIcon" id="weatherIcon">
+            </div>
+            
+            <div class="date" id="date">Saturday, August 27, 2022</div>
+            <div class="time" id="time">04:30 PM</div>
+           
+            
+        </div>
+        <div class="weatherDetailsTab">
+            <div class="weatherDetailsContainer">
+            <div class="weatherDetailsTabItem">
+                <img src="src/gh.png" alt="">
+                <div class="details">
+                    <div>Feels Like</div>
+                    <div class="detailContent">16°C</div>
+                    <div class="far">16°F</div>
+                </div>
+            </div>
+            <div class="weatherDetailsTabItem">
+                <img src="src/gh.png" alt="">
+                <div class="details">
+                    <div>Humidity</div>
+                    <div class="detailContent">68%</div>
+                    
+                </div>
+            </div>
+            <div class="weatherDetailsTabItem">
+                <img src="src/gh.png" alt="">
+                <div class="details">
+                    <div>Wind Speed</div>
+                    <div class="detailContent">14.8 km/h</div>
+                    <div class="far">9.2 mph</div>
+                </div>
+            </div>
+            <div class="weatherDetailsTabItem">
+                <img src="src/gh.png" alt="">
+                <div class="details">
+                    <div>Atmospheric Pressure</div>
+                    <div class="detailContent">1007 hPa</div>                  
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
 </body>
 </html>

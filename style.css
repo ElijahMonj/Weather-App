@@ -1,0 +1,86 @@
+body{
+    background-image: url(src/sample.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+    color: white;
+}
+.container{
+    display: flex;
+   min-height: 100vh;
+   min-width: 100vh;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+  
+}
+.weatherTab{
+    border-style: solid;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.weatherTab>*{
+   margin: 10px;
+   
+}
+.weatherDetailsTab{
+    flex-grow: 1;
+    border-style: solid;
+
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    
+    
+}
+.weatherIcon{
+    width: 100%;
+}
+.currentWeather{
+    font-size: 100px;
+}
+.location{
+    font-size: 50px;
+}
+.date,.time{
+    font-size: 25px;
+}
+.tempIcon{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.tempC{
+    font-size: 75px;
+}
+.tempF{
+    font-size: 40px;
+    float: right;
+}
+.message{
+    font-size: 13px;
+    height: 13px;
+}
+
+
+.weatherDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.weatherDetailsTabItem{
+    display: flex;
+    
+}
+.weatherDetailsTabItem img{
+    object-fit: contain;
+}
+.details{
+    flex-grow: 1;
+}
+.detailContent{
+    font-size: 40px;
+}
