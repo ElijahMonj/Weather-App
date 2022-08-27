@@ -8,9 +8,9 @@ let cityDate;
 let cityYear;
 let cityDay;
 let cityTime;
-async function getData() {
+async function getData(newCity) {
     try{
-        const requestURL = 'https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=01f9154ebcd50215ad1f3cfe738845d3';
+        const requestURL = 'https://api.openweathermap.org/data/2.5/weather?q='+newCity+'&appid=01f9154ebcd50215ad1f3cfe738845d3';
         const request = new Request(requestURL);
     
         const response = await fetch(request);
@@ -59,10 +59,10 @@ async function getData() {
     console.log(cityDay);
     console.log(cityTime);
 
-    populate(weatherMain,weatherDescription,weatherIcon,mainTempCel,mainTempFar,feelsLikeTempCel,feelsLikeTempCel,humidity,windSpeedKPH,
+    populate(weatherMain,weatherDescription,weatherIcon,mainTempCel,mainTempFar,feelsLikeTempCel,feelsLikeTempFar,humidity,windSpeedKPH,
         windSpeedMPH,timeDt,cityName,country,pressure,timezone,cityMonth,cityDate,cityYear,cityDay,cityTime);
     }catch{
-        alert("error");
+        document.getElementById("message").innerHTML = "City does not exist!";
     }
    
 }
@@ -133,10 +133,28 @@ cityTime=time;
 }
 
 
-function populate(weatherMain,weatherDescription,weatherIcon,mainTempCel,mainTempFar,feelsLikeTempCel,feelsLikeTempCel,humidity,windSpeedKPH,
+function populate(weatherMain,weatherDescription,weatherIcon,mainTempCel,mainTempFar,feelsLikeTempCel,feelsLikeTempFar,humidity,windSpeedKPH,
     windSpeedMPH,timeDt,cityName,country,pressure,timezone,cityMonth,cityDate,cityYear,cityDay,cityTime){
-
-
-    console.log(cityDate)
+    
+    let THE_WEATHER = weatherDescription.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+    document.getElementById("message").innerHTML = "";
+    document.getElementById("currentWeather").innerHTML = THE_WEATHER;
+    document.getElementById("location").innerHTML =cityName+", "+country;
+    document.getElementById("tempC").innerHTML=mainTempCel;
+    document.getElementById("tempF").innerHTML=mainTempFar;
+    document.getElementById("date").innerHTML=cityDay+", "+cityMonth+" "+cityDate+", "+cityYear;
+    document.getElementById("time").innerHTML=cityTime;
+    document.getElementById("feelslikeC").innerHTML=feelsLikeTempCel;
+    document.getElementById("feelslikeF").innerHTML=feelsLikeTempFar;
+    document.getElementById("humidity").innerHTML=humidity;
+    document.getElementById("speedkph").innerHTML=windSpeedKPH;
+    document.getElementById("speedmph").innerHTML=windSpeedMPH;
+    document.getElementById("pressure").innerHTML=pressure+" hPa";
+    document.getElementById("weatherIcon").src = "src/"+weatherIcon+".png";
 }
-getData();   
+getData(city);   
+function checkWeather(){
+    const val = document.querySelector('input').value;
+    document.querySelector('input').value="";
+    getData(val); 
+}

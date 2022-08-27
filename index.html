@@ -8,64 +8,82 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="searchstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;500;600;700&family=Cairo:wght@200;300;400&family=Ibarra+Real+Nova&family=Nunito:wght@200;400&family=Patrick+Hand&family=Roboto+Mono&family=Secular+One&display=swap" rel="stylesheet">
 </head>
 <body> 
+    <header>
+        Weather Today
+    </header>
     <div class="container">
         <div class="weatherTab">
-            <form action="#">
-                <input type="search" placeholder="Seach a city...">
-            </form>
-            <div class="message" id="message">not fucking real</div>
-            <div class="currentWeather" id="currentWeather">Rain</div>
-            <div class="location" id="location">Manila, PH</div>
+            <form onsubmit="checkWeather()" action="javascript:void(0);">
+                <input type="search" placeholder="Search a city..." required id="newCity">
+                <button type="submit">Search</button>
+              </form>
+            <div class="message" id="message"></div>
+            <div class="currentWeather" id="currentWeather">Weather</div>
+            <div class="location" id="location">Location</div>
             <div class="tempIcon">
                 <div class="temp">
-                    <div class="tempC" id="tempC">16°C</div>
-                    <div class="tempF" id="tempF">16°F</div>
+                    <div class="tempC" id="tempC">°C</div>
+                    <div class="tempF" id="tempF">°F</div>
                 </div> 
                 <img src="src/gh.png" alt=""class="weatherIcon" id="weatherIcon">
             </div>
             
-            <div class="date" id="date">Saturday, August 27, 2022</div>
-            <div class="time" id="time">04:30 PM</div>
+            <div class="date" id="date">Date</div>
+            <div class="time" id="time">Time</div>
            
             
         </div>
         <div class="weatherDetailsTab">
             <div class="weatherDetailsContainer">
             <div class="weatherDetailsTabItem">
-                <img src="src/gh.png" alt="">
+                <img src="src/cold.png" alt="">
                 <div class="details">
                     <div>Feels Like</div>
-                    <div class="detailContent">16°C</div>
-                    <div class="far">16°F</div>
+                    <div class="detailContent" id="feelslikeC">°C</div>
+                    <div class="far" id="feelslikeF">°F</div>
                 </div>
             </div>
             <div class="weatherDetailsTabItem">
-                <img src="src/gh.png" alt="">
+                <img src="src/humidity.png" alt="">
                 <div class="details">
                     <div>Humidity</div>
-                    <div class="detailContent">68%</div>
+                    <div class="detailContent" id="humidity">%</div>
                     
                 </div>
             </div>
             <div class="weatherDetailsTabItem">
-                <img src="src/gh.png" alt="">
+                <img src="src/wind.png" alt="">
                 <div class="details">
                     <div>Wind Speed</div>
-                    <div class="detailContent">14.8 km/h</div>
-                    <div class="far">9.2 mph</div>
+                    <div class="detailContent" id="speedkph">km/h</div>
+                    <div class="far" id="speedmph">mph</div>
                 </div>
             </div>
             <div class="weatherDetailsTabItem">
-                <img src="src/gh.png" alt="">
+                <img src="src/hurricane.png" alt="">
                 <div class="details">
                     <div>Atmospheric Pressure</div>
-                    <div class="detailContent">1007 hPa</div>                  
+                    <div class="detailContent" id="pressure">hPa</div>                  
                 </div>
             </div>
         </div>
         </div>
     </div>
-</body>
+    <footer>
+        <div class="credits">
+            <div>Powered by <a href="https://openweathermap.org/">OpenWeather</a></div>
+            <div>Icons made by Iconixar from <a href="https://www.flaticon.com">www.flaticon.com</a></div>
+            <div>Background photo by <a href="https://www.pexels.com/photo/view-of-street-from-a-glass-window-531880/">Pixabay</a></div>
+        </div>
+        <div class="copyrights">
+            <div>Copyrights 2022 @ElijahMonj</div>
+            <a href="https://github.com/ElijahMonj/Weather-App"><img src="src/gh.png" alt=""></a>
+        </div>
+    </footer>
+</body> 
 </html>

@@ -1,5 +1,2 @@
 # Weather-App
-feelslike C,F
-humidity
-winspeed, kph,mph
-pressure?,
+Done: 8/27/22
