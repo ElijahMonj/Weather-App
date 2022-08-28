@@ -136,9 +136,11 @@ cityTime=time;
 function populate(weatherMain,weatherDescription,weatherIcon,mainTempCel,mainTempFar,feelsLikeTempCel,feelsLikeTempFar,humidity,windSpeedKPH,
     windSpeedMPH,timeDt,cityName,country,pressure,timezone,cityMonth,cityDate,cityYear,cityDay,cityTime){
     
-    let THE_WEATHER = weatherDescription.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+    let THE_WEATHER = weatherMain.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+    let THE_WEATHER_DESCRIPTION = weatherDescription.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
     document.getElementById("message").innerHTML = "";
     document.getElementById("currentWeather").innerHTML = THE_WEATHER;
+    document.getElementById("currentWeatherDescription").innerHTML = THE_WEATHER_DESCRIPTION;
     document.getElementById("location").innerHTML =cityName+", "+country;
     document.getElementById("tempC").innerHTML=mainTempCel;
     document.getElementById("tempF").innerHTML=mainTempFar;
